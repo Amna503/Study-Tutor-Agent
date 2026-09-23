@@ -2,6 +2,10 @@ import os
 
 from crewai import Agent, Task, Crew, LLM
 
+import crewai.llms.cache as _crewai_cache
+
+_crewai_cache.mark_cache_breakpoint = lambda msg: msg
+
 from tools import (
     calculator,
     create_study_material_tool,
